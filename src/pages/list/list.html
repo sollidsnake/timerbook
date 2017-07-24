@@ -4,20 +4,21 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>List</ion-title>
+
+    <ion-buttons end>
+      <button ion-button [navPush]="newPage">New</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
+    <button ion-item *ngFor="let book of books" (click)="itemTapped($event, book, books.indexOf(book))">
+      <ion-icon [name]="book.icon" item-left></ion-icon>
+      {{book.title}}
       <div class="item-note" item-right>
-        {{item.note}}
+        {{book.start}}
       </div>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>

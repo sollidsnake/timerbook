@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+
+    <ion-buttons end *ngIf="endButton">
+      <button ion-button [navPush]="endButton">New</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ book.id >= 0 ? 'Editing ' + book.title : 'New book' }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button color="danger" (click)="confirmDelete()">Delete</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Book title</ion-label>
+      <ion-input type="text" [(ngModel)]="book.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Starting date</ion-label>
+      <ion-datetime display-format="YYYY/MM/DD" [(ngModel)]="book.start" name="start"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Finishing date</ion-label>
+      <ion-datetime [(ngModel)]="book.finish" name="finish"></ion-datetime>
+    </ion-item>
+
+    <button ion-button type="submit" block>Save</button>
+  </form>
+</ion-content>
