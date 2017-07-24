@@ -14,9 +14,7 @@ export class ListPage {
   newPage: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private storage: Storage) {
-    // If we navigated to this page, we will have an item available as a nav param
-
+              storage: Storage) {
     this.newPage = NewPage;
 
     storage.get('books').then((books) => {
