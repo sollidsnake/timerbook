@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { NewPage } from '../new/new';
+import { HomePage } from '../home/home';
 import { Book } from '../../models/book';
 
 @Component({

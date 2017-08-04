@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { ListPage } from '../list/list';
 import { AlertController } from 'ionic-angular';
@@ -74,8 +74,6 @@ export class NewPage {
 
       let book = this.book;
 
-      let _id = this.id;
-
       if (this.id === null) {
         book.id = books.length;
         books.push(book);
@@ -86,7 +84,7 @@ export class NewPage {
       }
       this.storage.set('books', books);
 
-      this.navCtrl.push(ListPage);
+      this.navCtrl.setRoot(ListPage, {}, {animate: true});
     });
   }
 }
