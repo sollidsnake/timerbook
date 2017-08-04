@@ -14,10 +14,9 @@
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="let book of books" (click)="itemTapped($event, book, books.indexOf(book))">
-      <ion-icon [name]="book.icon" item-left></ion-icon>
       {{book.title}}
       <div class="item-note" item-right>
-        {{book.author}}
+        <small>{{book.author}}</small>
       </div>
     </button>
   </ion-list>
